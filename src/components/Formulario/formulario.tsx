@@ -1,22 +1,22 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import Botao from '../Botao/botao';
 
 const Formulario = () => {
-
   const [data, setData] = useState('');
   const [quantidadeHomens, setQuantidadeHomens] = useState('');
   const [quantidadeMulheres, setQuantidadeMulheres] = useState('');
   const [quantidadeCriancas, setQuantidadeCriancas] = useState('');
 
-
-  const handleSubmit = (event: any) => {
+  const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
 
     console.log('Data:', data);
     console.log('Quantidade de Homens:', quantidadeHomens);
     console.log('Quantidade de Mulheres:', quantidadeMulheres);
     console.log('Quantidade de Crianças:', quantidadeCriancas);
+  };
 
+  const handleReset = () => {
     setData('');
     setQuantidadeHomens('');
     setQuantidadeMulheres('');
@@ -24,7 +24,7 @@ const Formulario = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form id="formulario" onSubmit={handleSubmit}>
       <div>
         <label htmlFor="data">Data:</label>
         <input
@@ -65,7 +65,8 @@ const Formulario = () => {
           required
         />
       </div>
-      <Botao tipo="submit"/>
+      <Botao tipo="submit" nome="Enviar" />
+      <Botao tipo="reset" nome="Limpar" onClick={handleReset} />
     </form>
   );
 };
