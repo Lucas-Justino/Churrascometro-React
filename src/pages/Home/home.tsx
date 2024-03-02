@@ -1,6 +1,6 @@
 import Botao from "../../components/Botao/botao";
 
-const Home = () => {
+const Lista = () => {
     return (
         <div>
             <h1>Lista de Churrascos</h1>
@@ -25,4 +25,4 @@ const Home = () => {
     );
 };
 
-export default Home;
+export default Lista;

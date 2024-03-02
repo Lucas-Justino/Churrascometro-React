@@ -16,7 +16,7 @@ const Formulario = () => {
     console.log('Quantidade de Homens:', quantidadeHomens);
     console.log('Quantidade de Mulheres:', quantidadeMulheres);
     console.log('Quantidade de Crianças:', quantidadeCriancas);
-    window.location.href = '/';
+    window.location.href = '/lista';
   };
 
   const handleReset = () => {
@@ -28,7 +28,7 @@ const Formulario = () => {
 
   return (
     <div>
-      <Link to={"/"}>Voltar</Link> {/* BOTÃO QUE FAZ VOLTAR PARA A TELA DE APRESENTAÇÃO DOS CHURRASCOS */} 
+      <Link to={"/lista"}>Voltar</Link> {/* BOTÃO QUE FAZ VOLTAR PARA A TELA DE APRESENTAÇÃO DOS CHURRASCOS */} 
       <form id="formulario" onSubmit={handleSubmit}>
         <div>
           <label htmlFor="data">Data:</label>
