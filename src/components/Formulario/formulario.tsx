@@ -37,9 +37,13 @@ export default function Formulario() {
     <div>
       <Navbar/>
       <form onSubmit={handleSubmit(onSubmit)}>
+        <label> Homens: </label>
         <Input type="number" register={register} name="homens" error={errors.homens} />
+        <label> Mulheres: </label>
         <Input type="number" register={register} name="mulheres" error={errors.mulheres} />
+        <label> Crianças: </label>
         <Input type="number" register={register} name="criancas" error={errors.criancas} />
+        <label> Data: </label>
         <Input type="date" register={register} name="data" error={errors.data} />
 
         <button type="submit">Enviar</button>
