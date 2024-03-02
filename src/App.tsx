@@ -10,8 +10,9 @@ function App() {
       <RoutesDom>
         <Route path="/formulario" element={<Formulario />} />
         <Route path="/home" element={<Home />} />
+        <Route path="/" element={<Home />} />
         {/* <Route path="/editar" element={<Formulario />} /> */}
-        <Route path="/navegacao" element={<Navbar/>} />
+        {/* <Route path="/navegacao" element={<Navbar/>} /> */}
       </RoutesDom>
     </Router>
   );
