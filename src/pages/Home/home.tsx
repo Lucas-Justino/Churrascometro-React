@@ -1,8 +1,10 @@
 import Botao from "../../components/Botao/botao";
+import Navbar from "../../components/Navbar/navbar";
 
 const Home = () => {
     return (
         <div>
+            <Navbar/>
             <h1>Lista de Churrascos</h1>
             <table>
                 <thead>
