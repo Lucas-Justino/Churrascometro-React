@@ -1,6 +1,9 @@
 interface IProps {
     register: any;
     name: string;
+    type: string;
+    error: any;
+    
 }
 
 const Input = ({register, name, ...rest}:IProps) =>{
@@ -10,3 +13,5 @@ const Input = ({register, name, ...rest}:IProps) =>{
         {...register(name)}/>
     );
 }
+
+export {Input};

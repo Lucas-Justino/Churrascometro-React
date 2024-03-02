@@ -1,80 +1,46 @@
-import React, { useState } from 'react';
-import Botao from '../Botao/botao';
-import { Link } from 'react-router-dom';
-import Home from '../../pages/Home/home';
+import { yupResolver } from "@hookform/resolvers/yup";
+import { useForm } from "react-hook-form"
+import * as yup from "yup"
+import { Input } from "../Input/input";
 
-const Formulario = () => {
-  const [data, setData] = useState('');
-  const [quantidadeHomens, setQuantidadeHomens] = useState('');
-  const [quantidadeMulheres, setQuantidadeMulheres] = useState('');
-  const [quantidadeCriancas, setQuantidadeCriancas] = useState('');
 
-  const handleSubmit = (event: React.FormEvent) => {
-    event.preventDefault();
+interface Inputs {
+  data: Date;
+  homens: number
+  mulheres: number
+  criancas: number
+}
 
-    console.log('Data:', data);
-    console.log('Quantidade de Homens:', quantidadeHomens);
-    console.log('Quantidade de Mulheres:', quantidadeMulheres);
-    console.log('Quantidade de Crianças:', quantidadeCriancas);
-    window.location.href = '/lista';
-  };
+const schema = yup
+  .object({
+    homens: yup.number().positive('Quantidade mínima não atingida').integer().required(),
+    data: yup.date().min(new Date(), 'Data inválida, o evento precisa ser marcado futuramente').required('Erro na data'),
+    mulheres: yup.number().positive('Quantidade mínima não atingida').integer().required(),
+    criancas: yup.number().positive('Quantidade mínima não atingida').integer().required(),
+  })
+  .required()
 
-  const handleReset = () => {
-    setData('');
-    setQuantidadeHomens('');
-    setQuantidadeMulheres('');
-    setQuantidadeCriancas('');
-  };
+export default function Formulario() {
+
+  const { register, handleSubmit, formState: { errors } } = useForm<Inputs>({
+    resolver: yupResolver(schema),
+    mode: 'onChange'
+  })
+
+  const onSubmit = (data: Inputs) => {
+    console.log(errors);
+    console.log(data)
+  }
 
   return (
-    <div>
-      <Link to={"/lista"}>Voltar</Link> {/* BOTÃO QUE FAZ VOLTAR PARA A TELA DE APRESENTAÇÃO DOS CHURRASCOS */} 
-      <form id="formulario" onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="data">Data:</label>
-          <input
-            type="date"
-            id="data"
-            value={data}
-            onChange={(event) => setData(event.target.value)}
-            required
-          />
-        </div>
-        <div>
-          <label htmlFor="homens">Homens:</label>
-          <input
-            type="number"
-            id="homens"
-            value={quantidadeHomens}
-            onChange={(event) => setQuantidadeHomens(event.target.value)}
-            required
-          />
-        </div>
-        <div>
-          <label htmlFor="mulheres">Mulheres:</label>
-          <input
-            type="number"
-            id="mulheres"
-            value={quantidadeMulheres}
-            onChange={(event) => setQuantidadeMulheres(event.target.value)}
-            required
-          />
-        </div>
-        <div>
-          <label htmlFor="criancas">Crianças:</label>
-          <input
-            type="number"
-            id="criancas"
-            value={quantidadeCriancas}
-            onChange={(event) => setQuantidadeCriancas(event.target.value)}
-            required
-          />
-        </div>
-        <Botao tipo="submit" nome="Enviar" />
-        <Botao tipo="reset" nome="Limpar" onClick={handleReset} />
-      </form>
-    </div>
-  );
-};
+    <form onSubmit={handleSubmit(onSubmit)}>
+      <Input type="number" register={register} name="homens" error={errors.homens} />
+      <Input type="number" register={register} name="mulheres"  error={errors.mulheres} />
+      <Input type="number" register={register} name="criancas"  error={errors.criancas} />
+      <Input type="date" register={register} name="data"  error={errors.data} />
 
-export default Formulario;
+      <button type="submit">Enviar</button>
+      <button type="button" onClick={() => console.log(errors)}>Mostrar Erros</button>
+    </form>
+  )
+}
