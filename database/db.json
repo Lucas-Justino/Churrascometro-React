@@ -1,55 +1,30 @@
 {
   "churrasco": [
     {
-      "qtdHomens": 30,
-      "qtdMulheres": 30,
-      "qtdCriancas": 30,
-      "id": "2"
-    },
-    {
-      "qtdHomens": 60,
-      "qtdMulheres": 60,
-      "qtdCriancas": 60,
-      "id": "50f8"
-    },
-    {
-      "id": "ef37",
-      "qtdHomens": 5,
-      "qtdMulheres": 10,
-      "qtdCriancas": 12
-    },
-    {
-      "id": "d3f1",
-      "criancas": 320,
-      "mulheres": 25,
-      "data": "2024-03-29T03:00:00.000Z",
-      "homens": 20
+      "id": "1",
+      "totalPessoas": 30,
+      "carnes": 10,
+      "paoDeAlho": 50,
+      "carvao": 30,
+      "refrigerantes": 6,
+      "cerveja": 60,
+      "criancas": 10,
+      "mulheres": 10,
+      "data": "2024-03-08T03:00:00.000Z",
+      "homens": 10
     },
     {
       "id": "1",
-      "totalPessoas": 67,
-      "carnes": 22.799999999999997,
-      "paoDeAlho": 99,
-      "carvao": 67,
-      "refrigerantes": 13.4,
-      "cerveja": 96,
-      "criancas": 35,
+      "totalPessoas": 60,
+      "carnes": 19,
+      "paoDeAlho": 100,
+      "carvao": 60,
+      "refrigerantes": 12,
+      "cerveja": 120,
+      "criancas": 20,
       "mulheres": 20,
-      "data": "2024-03-14T03:00:00.000Z",
-      "homens": 12
-    },
-    {
-      "id": "1",
-      "totalPessoas": 82,
-      "carnes": "27.40",
-      "paoDeAlho": 124,
-      "carvao": 82,
-      "refrigerantes": "16.40",
-      "cerveja": 126,
-      "criancas": 40,
-      "mulheres": 25,
-      "data": "2024-03-26T03:00:00.000Z",
-      "homens": 17
+      "data": "2024-03-09T03:00:00.000Z",
+      "homens": 20
     }
   ]
 }
