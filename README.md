@@ -1,30 +1,49 @@
-# React + TypeScript + Vite
+# Churrascometro
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Bem-vindo ao Churrascometro! Este é um projeto simples e prático desenvolvido em React com TypeScript e empacotado com Vite para ajudar a calcular a quantidade de carne, pão de alho, carvão, refrigerantes e cerveja necessários para o seu churrasco, de acordo com o número de homens, mulheres e crianças que estarão presentes.
 
-Currently, two official plugins are available:
+## Como usar:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. **Clone o repositório:**
+git clone https://github.com/seu-usuario/churrascometro.git
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+2. **Instale as dependências:**
+npm install
 
-- Configure the top-level `parserOptions` property like this:
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+3. **Execute o projeto:**
+npm run dev
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+
+4. **Acesse o projeto no navegador:**
+Navegue para `http://localhost:3000` para visualizar o aplicativo.
+
+5. **Siga as instruções:**
+Insira o número de homens, mulheres e crianças que estarão presentes no churrasco quando solicitado.
+
+6. **Obtenha os resultados:**
+O Churrascometro calculará automaticamente a quantidade de carne, pão de alho, carvão, refrigerantes e cerveja necessários com base nas informações fornecidas.
+
+## Recursos:
+
+- **Cálculo preciso:** Utilizando um algoritmo inteligente, o Churrascometro garante uma estimativa precisa das quantidades necessárias.
+- **Fácil de usar:** Interface simples e intuitiva, tornando o processo de cálculo rápido e eficiente.
+- **Personalizável:** Adapte o cálculo conforme necessário para atender às suas preferências.
+
+## Contribuindo:
+
+Contribuições são bem-vindas! Se você tiver sugestões de melhorias, novos recursos ou encontrar algum problema, sinta-se à vontade para abrir uma issue ou enviar um pull request.
+
+## Os integrantes do grupo e colaboradores desse projeto são:
+
+- [Carolina Dutra](https://github.com/ahcarol)
+- [Juan Figueiredo](https://github.com/juan-figueiredo)
+- [Karina Nunes](https://www.linkedin.com/in/karinanuunes/)
+- [Laiane de Jesus](https://github.com/LaianeDeJesus)
+- [Pabricio Lima](https://github.com/Pabriciolima)
+
+## Aviso Legal:
+
+Divirta-se e aproveite o seu churrasco! 🍖🔥🍺
+
