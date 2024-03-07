@@ -1,3 +1,4 @@
+import DeleteApi from "../../RESTApi/DeleteApi";
 import Botao from "../../components/Botao/botao";
 import Navbar from "../../components/Navbar/navbar";
 
@@ -16,7 +17,7 @@ const Home = () => {
                         <th>Refrigerantes</th>
                         <th>Cerveja</th>
                         <Botao tipo="button" nome="Editar" />
-                        <Botao tipo="button" nome="Apagar" />
+                        <Botao tipo="button" nome="Apagar" onClick={DeleteApi} />
                     </tr>
                 </thead>
                 <tbody>

@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form"
 import * as yup from "yup"
 import { Input } from "../Input/input";
 import Navbar from "../Navbar/navbar";
+import { apiPOST } from "../../services/axios.services";
 
 
 interface Inputs {
@@ -31,11 +32,18 @@ export default function Formulario() {
   const onSubmit = (data: Inputs) => {
     console.log(errors);
     console.log(data)
+    const totalPessoas = data.criancas + data.mulheres + data.homens;
+    const carnes = (data.criancas * 0.4 + data.mulheres * 0.32 + data.homens * 0.2).toFixed(2);
+    const paoDeAlho = (data.homens + data.mulheres) * 2 + data.criancas;
+    const carvao = data.homens + data.mulheres + data.criancas;
+    const refrigerantes = (carvao / 5).toFixed(2);
+    const cerveja = (data.homens + data.mulheres) * 3;
+    apiPOST("churrasco", { id: "1", totalPessoas, carnes, paoDeAlho, carvao, refrigerantes, cerveja, ...data })
   }
 
   return (
     <div>
-      <Navbar/>
+      <Navbar />
       <form onSubmit={handleSubmit(onSubmit)}>
         <label> Homens: </label>
         <Input type="number" register={register} name="homens" error={errors.homens} />
