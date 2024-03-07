@@ -1,62 +1,115 @@
 import { yupResolver } from "@hookform/resolvers/yup";
-import { useForm } from "react-hook-form"
-import * as yup from "yup"
+import { useForm } from "react-hook-form";
+import * as yup from "yup";
 import { Input } from "../Input/input";
 import Navbar from "../Navbar/navbar";
 import { apiPOST } from "../../services/axios.services";
 
-
 interface Inputs {
   data: Date;
-  homens: number
-  mulheres: number
-  criancas: number
+  homens: number;
+  mulheres: number;
+  criancas: number;
 }
 
 const schema = yup
   .object({
-    homens: yup.number().positive('Quantidade mínima não atingida').integer().required(),
-    data: yup.date().min(new Date(), 'Data inválida, o evento precisa ser marcado futuramente').required('Erro na data'),
-    mulheres: yup.number().positive('Quantidade mínima não atingida').integer().required(),
-    criancas: yup.number().positive('Quantidade mínima não atingida').integer().required(),
+    homens: yup
+      .number()
+      .positive("Quantidade mínima não atingida")
+      .integer()
+      .required(),
+    data: yup
+      .date()
+      .min(
+        new Date(),
+        "Data inválida, o evento precisa ser marcado futuramente"
+      )
+      .required("Erro na data"),
+    mulheres: yup
+      .number()
+      .positive("Quantidade mínima não atingida")
+      .integer()
+      .required(),
+    criancas: yup
+      .number()
+      .positive("Quantidade mínima não atingida")
+      .integer()
+      .required(),
   })
-  .required()
+  .required();
 
 export default function Formulario() {
-
-  const { register, handleSubmit, formState: { errors } } = useForm<Inputs>({
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<Inputs>({
     resolver: yupResolver(schema),
-    mode: 'onChange'
-  })
+    mode: "onChange",
+  });
 
   const onSubmit = (data: Inputs) => {
     console.log(errors);
-    console.log(data)
+    console.log(data);
     const totalPessoas = data.criancas + data.mulheres + data.homens;
-    const carnes = (data.criancas * 0.4 + data.mulheres * 0.32 + data.homens * 0.2).toFixed(2);
+    const carnes = Math.ceil(
+      data.criancas * 0.4 + data.mulheres * 0.32 + data.homens * 0.2
+    );
     const paoDeAlho = (data.homens + data.mulheres) * 2 + data.criancas;
     const carvao = data.homens + data.mulheres + data.criancas;
-    const refrigerantes = (carvao / 5).toFixed(2);
+    const refrigerantes = Math.ceil(carvao / 5);
     const cerveja = (data.homens + data.mulheres) * 3;
-    apiPOST("churrasco", { id: "1", totalPessoas, carnes, paoDeAlho, carvao, refrigerantes, cerveja, ...data })
-  }
+    apiPOST("churrasco", {
+      id: "1",
+      totalPessoas,
+      carnes,
+      paoDeAlho,
+      carvao,
+      refrigerantes,
+      cerveja,
+      ...data,
+    });
+  };
 
   return (
     <div>
       <Navbar />
       <form onSubmit={handleSubmit(onSubmit)}>
         <label> Homens: </label>
-        <Input type="number" register={register} name="homens" error={errors.homens} />
+        <Input
+          type="number"
+          register={register}
+          name="homens"
+          error={errors.homens}
+        />
         <label> Mulheres: </label>
-        <Input type="number" register={register} name="mulheres" error={errors.mulheres} />
+        <Input
+          type="number"
+          register={register}
+          name="mulheres"
+          error={errors.mulheres}
+        />
         <label> Crianças: </label>
-        <Input type="number" register={register} name="criancas" error={errors.criancas} />
+        <Input
+          type="number"
+          register={register}
+          name="criancas"
+          error={errors.criancas}
+        />
         <label> Data: </label>
-        <Input type="date" register={register} name="data" error={errors.data} />
+        <Input
+          type="date"
+          register={register}
+          name="data"
+          error={errors.data}
+        />
 
         <button type="submit">Enviar</button>
-        <button type="button" onClick={() => console.log(errors)}>Mostrar Erros</button>
+        <button type="button" onClick={() => console.log(errors)}>
+          Mostrar Erros
+        </button>
       </form>
     </div>
-  )
+  );
 }
