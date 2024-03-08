@@ -25,6 +25,19 @@
       "mulheres": 20,
       "data": "2024-03-09T03:00:00.000Z",
       "homens": 20
+    },
+    {
+      "id": "1",
+      "totalPessoas": 25,
+      "carnes": 8,
+      "paoDeAlho": 45,
+      "carvao": 25,
+      "refrigerantes": 5,
+      "cerveja": 60,
+      "criancas": 5,
+      "mulheres": 10,
+      "data": "2024-03-09T03:00:00.000Z",
+      "homens": 10
     }
   ]
 }
