@@ -1,6 +1,6 @@
 import axios, { AxiosResponse } from "axios"
 
-const API_URL = "http://localhost:3000/"
+const API_URL = "http://localhost:3000/churrasco/"
 
 export const apiGET = async <T>(endpoint: string): Promise<AxiosResponse<T, any>> => {
     return axios.get(`${API_URL}${endpoint}`)

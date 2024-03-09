@@ -1,7 +1,7 @@
-import DeleteApi from "../../RESTApi/DeleteApi";
 import Botao from "../../components/Botao/botao";
 import Navbar from "../../components/Navbar/navbar";
 import database from "../../../database/db.json";
+import { apiDELETE } from "../../services/axios.services";
 
 const Home = () => {
   return (
@@ -30,9 +30,9 @@ const Home = () => {
                 <td>{data.paoDeAlho}</td>
                 <td>{data.carvao}</td>
                 <td>{data.refrigerantes}</td>
-                <td>{data.cerveja}</td>
+                <td>{data.cerveja}</td>                
                 <Botao tipo="button" nome="Editar" />
-                <Botao tipo="button" nome="Apagar" onClick={DeleteApi} />
+                <Botao tipo="button" nome="Apagar" onClick={() => apiDELETE((data.id).toString())} />
               </tr>
             ))}
           </tbody>
