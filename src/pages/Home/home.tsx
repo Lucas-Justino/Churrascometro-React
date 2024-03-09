@@ -2,6 +2,7 @@ import Botao from "../../components/Botao/botao";
 import Navbar from "../../components/Navbar/navbar";
 import database from "../../../database/db.json";
 import { apiDELETE } from "../../services/axios.services";
+import Formulario from "../Formulario/formulario";
 
 const Home = () => {
   return (
@@ -32,7 +33,7 @@ const Home = () => {
                 <td>{data.refrigerantes}</td>
                 <td>{data.cerveja}</td>                
                 <Botao tipo="button" nome="Editar" />
-                <Botao tipo="button" nome="Apagar" onClick={() => apiDELETE((data.id).toString())} />
+                <Botao tipo="button" nome="Apagar" onClick={() => apiDELETE("churrasco/" + (data.id).toString())} />
               </tr>
             ))}
           </tbody>

@@ -1,6 +1,6 @@
 import './App.css'
 import { BrowserRouter as Router, Routes as RoutesDom, Route } from 'react-router-dom';
-import Formulario from './components/Formulario/formulario'
+import Formulario from './pages/Formulario/formulario'
 import Home from './pages/Home/home';
 import Navbar from './components/Navbar/navbar';
 import GetApi from './RESTApi/GetApi';

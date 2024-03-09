@@ -1,6 +1,6 @@
 import axios, { AxiosResponse } from "axios"
 
-const API_URL = "http://localhost:3000/churrasco/"
+const API_URL = "http://localhost:3000/"
 
 export const apiGET = async <T>(endpoint: string): Promise<AxiosResponse<T, any>> => {
     return axios.get(`${API_URL}${endpoint}`)
@@ -11,6 +11,7 @@ export const apiPOST = async <T>(endpoint:string, data:any) => {
 }
 
 export const apiDELETE = async <T>(endpoint:string) => {
+    console.log(endpoint)
     return axios.delete(`${API_URL}${endpoint}`)
 }
 

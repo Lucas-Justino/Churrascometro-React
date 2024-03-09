@@ -1,8 +1,8 @@
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
-import { Input } from "../Input/input";
-import Navbar from "../Navbar/navbar";
+import { Input } from "../../components/Input/input";
+import Navbar from "../../components/Navbar/navbar";
 import { apiPOST } from "../../services/axios.services";
 
 interface Inputs {
@@ -16,7 +16,7 @@ const schema = yup
   .object({
     homens: yup
       .number()
-      .positive("Quantidade mínima não atingida")
+      .min(0)
       .integer()
       .required(),
     data: yup
@@ -28,12 +28,12 @@ const schema = yup
       .required("Erro na data"),
     mulheres: yup
       .number()
-      .positive("Quantidade mínima não atingida")
+      .min(0)
       .integer()
       .required(),
     criancas: yup
       .number()
-      .positive("Quantidade mínima não atingida")
+      .min(0)
       .integer()
       .required(),
   })
