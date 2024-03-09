@@ -1,0 +1,39 @@
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 -150px; 
+    /* padding: -10px 0; */
+    color: white;
+}
+
+.nav-logo img {
+    width: 100px;
+    height: auto;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    gap: 20px; 
+}
+
+.nav-menu li {
+    margin-left: 10px;
+    list-style: none;
+
+}
+
+.nav-menu li a {
+    text-decoration: none; 
+    color: inherit; 
+}
+
+.nav-newlist{
+    border-radius: 50px;
+    padding: 10px 38px;
+    background: #fff;
+    color: #262626;
+    list-style: none;
+}
