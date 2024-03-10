@@ -1,8 +1,9 @@
 import Botao from "../../components/Botao/botao";
 import Navbar from "../../components/Navbar/navbar";
 import database from "../../../database/db.json";
+// import { apiDELETE, apiPUT } from "../../services/axios.services";
 import { apiDELETE } from "../../services/axios.services";
-import Formulario from "../Formulario/formulario";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
@@ -23,17 +24,32 @@ const Home = () => {
             </tr>
           </thead>
           <tbody>
-            {database.churrasco.map((data: any, index: number) => (
-              <tr>
-                <td key={index}>{data.data}</td>
+            {database.churrasco.map((data: IData, index: number) => (
+              <tr key={index}>
+                <td>{data.data}</td>
                 <td>{data.totalPessoas}</td>
                 <td>{data.carnes}</td>
                 <td>{data.paoDeAlho}</td>
                 <td>{data.carvao}</td>
                 <td>{data.refrigerantes}</td>
-                <td>{data.cerveja}</td>                
-                <Botao tipo="button" nome="Editar" />
-                <Botao tipo="button" nome="Apagar" onClick={() => apiDELETE("churrasco/" + (data.id).toString())} />
+                <td>{data.cerveja}</td>
+                <td>
+                  {/* <Botao
+                    tipo="button"
+                    nome="Editar"
+                    onClick={() =>
+                      apiPUT(`churrasco/${data.id.toString()}`, data)
+                    }
+                  /> */}
+                  <Link to={`/editar/${data.id}`}>Editar</Link>
+                </td>
+                <td>
+                  <Botao
+                    tipo="button"
+                    nome="Apagar"
+                    onClick={() => apiDELETE("churrasco/" + data.id.toString())}
+                  />
+                </td>
               </tr>
             ))}
           </tbody>

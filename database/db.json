@@ -14,17 +14,17 @@
       "homens": 10
     },
     {
-      "id": "2",
-      "totalPessoas": 60,
-      "carnes": 19,
-      "paoDeAlho": 100,
-      "carvao": 60,
-      "refrigerantes": 12,
-      "cerveja": 120,
-      "criancas": 20,
-      "mulheres": 20,
-      "data": "2024-03-09T03:00:00.000Z",
-      "homens": 20
+      "totalPessoas": 143,
+      "carnes": 55,
+      "paoDeAlho": 163,
+      "carvao": 143,
+      "refrigerantes": 29,
+      "cerveja": 60,
+      "criancas": 123,
+      "mulheres": 10,
+      "data": "2024-03-11T03:00:00.000Z",
+      "homens": 10,
+      "id": "2"
     },
     {
       "id": "3",
