@@ -4,6 +4,7 @@ import * as yup from "yup";
 import { Input } from "../../components/Input/input";
 import Navbar from "../../components/Navbar/navbar";
 import { apiPOST } from "../../services/axios.services";
+import './formulario.css'
 
 interface Inputs {
   data: Date;
@@ -73,43 +74,38 @@ export default function Formulario() {
   };
 
   return (
-    <div>
-      <Navbar />
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <label> Homens: </label>
-        <Input
-          type="number"
-          register={register}
-          name="homens"
-          error={errors.homens}
-        />
-        <label> Mulheres: </label>
-        <Input
-          type="number"
-          register={register}
-          name="mulheres"
-          error={errors.mulheres}
-        />
-        <label> Crianças: </label>
-        <Input
-          type="number"
-          register={register}
-          name="criancas"
-          error={errors.criancas}
-        />
-        <label> Data: </label>
-        <Input
-          type="date"
-          register={register}
-          name="data"
-          error={errors.data}
-        />
-
-        <button type="submit">Enviar</button>
-        <button type="button" onClick={() => console.log(errors)}>
-          Mostrar Erros
-        </button>
-      </form>
+    <div className="container">
+      <div className="box">
+      <div className="left"></div>
+      <div className="right">
+        </div>
+        <h2>Churrascômetro</h2>
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <div className="formulario-inner">
+          <div className="field">
+              <label>Data:</label>
+              <Input type="date" register={register} name="data" error={errors.data} />
+            </div>
+            <div className="field">
+              <label>Homens:</label>
+              <Input type="number" register={register} name="homens" error={errors.homens} />
+            </div>
+            <div className="field">
+              <label>Mulheres:</label>
+              <Input type="number" register={register} name="mulheres" error={errors.mulheres} />
+            </div>
+            <div className="field">
+              <label className="label">Crianças:</label>
+              <Input type="number" register={register} name="criancas" error={errors.criancas} />
+            </div>
+            
+          </div>
+          <div className="button-group">
+            <button type="submit" className="botao-enviar">Enviar</button>
+            <button type="button" onClick={() => console.log(errors)}>Mostrar Erros</button>
+          </div>
+        </form>
+      </div>
     </div>
   );
 }
