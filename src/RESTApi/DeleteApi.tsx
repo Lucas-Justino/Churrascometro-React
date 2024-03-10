@@ -1,15 +1,12 @@
-import { apiDELETE } from "../services/axios.services"
+import { apiDELETE } from "../services/axios.services";
 
-const DeleteApi = () =>{
+const DeleteApi = () => {
+  const funcao = async () => {
+    const response = await apiDELETE("churrasco/1");
+    console.log(response.data);
+  };
 
-    const funcao = async () =>{
-        const response = await apiDELETE<IChurrasco>('churrasco/1')
-        console.log(response.data);
-    }
-    
-    return(
-        <button onClick={funcao}>Aperta Aqui: DELETAR</button>
-    )
-}
+  return <button onClick={funcao}>Aperta Aqui: DELETAR</button>;
+};
 
 export default DeleteApi;
