@@ -1,9 +1,9 @@
 .start {
   background-image: url("../../assets/imagem1.webp");
-  background-size: cover; /* Ocupar todo o espaço disponível */
-  background-position: center; /* Centralizar a imagem de fundo */
+  background-size: cover; 
+  background-position: center; 
   background-repeat: no-repeat;
-  height: 100vh; /* Altura igual à altura da janela do navegador */
+  height: 100vh; 
   margin: 0px 120px;
   margin-top: 270px;
 }
