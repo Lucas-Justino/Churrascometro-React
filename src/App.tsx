@@ -21,7 +21,7 @@ function App() {
         <Route path="/start" element={<Start />} />
         <Route path="/formulario" element={<Formulario />} />
         <Route path="/home" element={<Home />} />
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Start />} />
         <Route path="/getapi" element={<GetApi />} />
         <Route path="/postapi" element={<PostApi />} />
         <Route path="/deleteapi" element={<DeleteApi />} />

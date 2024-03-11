@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import React from 'react';
 import './start.css'
 import Navbar from '../../components/Navbar/navbar';
@@ -13,8 +14,8 @@ function Start() {
                 <p>para o seu churrasco</p>
              </div>
             <div className='star-button'>
-            <p>Comece criando aqui</p>
-            <img src={arrow_btn} alt="" />
+            <p><Link to={"/formulario"}>Comece criando aqui</Link></p>
+            <Link to={"/formulario"}><img src={arrow_btn} alt="" /></Link>
 
             </div>
          </div>

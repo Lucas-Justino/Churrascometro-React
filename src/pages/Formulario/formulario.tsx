@@ -77,7 +77,8 @@ export default function Formulario() {
   return (
     <div className="container">
       <Navbar/>
-      <div className="box">
+      <div className="content">
+              <div className="box">
       <div className="left">
       <img src={Imagem} alt="suaImagem" />
       </div>
@@ -111,6 +112,8 @@ export default function Formulario() {
         </div>
         
       </div>
+      </div>
+
     </div>
   );
 }

@@ -15,24 +15,45 @@
   width: fit-content;
   margin-top: 190px;
   padding-left: 100px;
+  text-shadow: 
+  -2px -2px 0 rgba(0, 0, 0, 0.1),  
+  2px -2px 0 rgba(0, 0, 0, 0.1),
+  -2px 2px 0 rgba(0, 0, 0, 0.1),
+  2px 2px 0 rgba(0, 0, 0, 0.1),
+  0px 0px 5px rgba(0, 0, 0, 0.1);
 }
+
 
 .star-button {
   display: flex;
   align-items: center;
   gap: 50px;
   width: fit-content;
-  margin-top: 70px;
-  padding: 5px 8px;
+  padding: 2px 9px;
   margin-left: 100px;
   padding-left: 30px;
   border-radius: 60px;
   background-color: white;
   cursor: pointer;
+  text-decoration: none;
+}
+
+.star-button img {
+  margin-top: 5px; /* Ajuste a margem superior conforme necessário */
 }
 
 .star-button p {
   color: #292929;
   font-size: 20px;
   font-weight: 400;
+  text-decoration: none;
+}
+
+.star-button p a {
+  text-decoration: none;
+  color: inherit; 
+}
+
+.star-button p a:hover {
+  color: #292929;
 }
