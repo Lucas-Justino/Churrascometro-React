@@ -5,6 +5,7 @@ import { Input } from "../../components/Input/input";
 import Navbar from "../../components/Navbar/navbar";
 import { apiPOST } from "../../services/axios.services";
 import './formulario.css'
+import Imagem from '../../assets/cozinheiro1.png'
 
 interface Inputs {
   data: Date;
@@ -75,11 +76,13 @@ export default function Formulario() {
 
   return (
     <div className="container">
+      <Navbar/>
       <div className="box">
-      <div className="left"></div>
+      <div className="left">
+      <img src={Imagem} alt="suaImagem" />
+      </div>
       <div className="right">
-        </div>
-        <h2>Churrascômetro</h2>
+        <h2>Cadastre aqui</h2>
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="formulario-inner">
           <div className="field">
@@ -105,6 +108,8 @@ export default function Formulario() {
             <button type="button" onClick={() => console.log(errors)}>Mostrar Erros</button>
           </div>
         </form>
+        </div>
+        
       </div>
     </div>
   );

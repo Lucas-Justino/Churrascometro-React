@@ -5,9 +5,9 @@ import arrow_btn from './../../assets/arrow_btn.png'
 
 function Start() {
     return (
-        <div>
-            <Navbar />
+    
             <div className='start'>
+                <Navbar />
                 <div className='start-text'>
                 <p>O cálculo ideal</p>
                 <p>para o seu churrasco</p>
@@ -18,7 +18,7 @@ function Start() {
 
             </div>
          </div>
-       </div>
+
     );
 }
 

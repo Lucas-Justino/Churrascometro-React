@@ -21,14 +21,13 @@
     box-shadow: 0px 0px 19px 5px rgba(0, 0, 0, 0.19);
     padding: 40px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     border-radius: 20px;
   }
   
   .left {
-    background-image: url("../../assets/cozinheiro1.png");
     background-repeat: no-repeat;
     background-position: left center;
     background-size: cover;
@@ -38,6 +37,11 @@
     justify-content: center;
     align-items: center;
   }
+
+  .left img {
+    max-width: 100%;
+    max-height: 100%;
+  }
   
   .right {
     width: 50%;
@@ -45,12 +49,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
   }
   
   h2 {
+    
     position: relative;
     padding: 0 0 10px;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
   }
   
   h2:after {
@@ -64,8 +70,21 @@
     border-radius: 2px;
     background-color: #9F3F30;
   }
+
+  input { 
+    border-radius: 20px;
+    border: none;
+    background-color: rgba(233, 233, 233, 0.6);
+
+  }
+
+  label {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
   
   .field {
+    border-radius: 20px;
     width: 100%;
     border: 2px solid rgba(0, 0, 0, 0);
     outline: none;
@@ -90,6 +109,7 @@
     width: 100%;
     padding: 0.5rem 1rem;
     background-color: #9F3F30;
+    margin-left: 16px;
     color: #fff;
     font-size: 1.1rem;
     border: none;

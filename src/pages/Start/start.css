@@ -4,17 +4,17 @@
   background-position: center; 
   background-repeat: no-repeat;
   height: 100vh; 
-  margin: 0px 120px;
-  margin-top: 270px;
 }
 
 .start-text {
   color: #fff;
-  font-size: 60px;
+  font-size: 100px;
   font-weight: 700;
   line-height: 70px;
   text-align: left;
   width: fit-content;
+  margin-top: 190px;
+  padding-left: 100px;
 }
 
 .star-button {
@@ -24,6 +24,7 @@
   width: fit-content;
   margin-top: 70px;
   padding: 5px 8px;
+  margin-left: 100px;
   padding-left: 30px;
   border-radius: 60px;
   background-color: white;
