@@ -5,6 +5,7 @@ import { Input } from "../../components/Input/input";
 import Navbar from "../../components/Navbar/navbar";
 import { useParams } from "react-router-dom";
 import { useStore } from "../../zustand/useEditForm/useEditForm.zustand";
+import desUpdateData from "../../hooks/desUpdateDate/desUpdateDate";
 
 interface Inputs {
   id: string;
@@ -30,7 +31,7 @@ const schema = yup
   .required();
 
 export default function Formulario() {
-  const { id } = useParams(); // Move a obtenção do id para fora do onSubmit
+  const { id } = useParams();
 
   const {
     register,
@@ -42,9 +43,10 @@ export default function Formulario() {
     mode: "onChange",
   });
 
-  const enviarDados = useStore(state => state.enviarDados); 
+  const enviarDados = useStore((state) => state.enviarDados);
 
   const onSubmit: SubmitHandler<Inputs> = (data: Inputs) => {
+    desUpdateData(data);
     const date = data.data;
     const totalPessoas = data.criancas + data.mulheres + data.homens;
     const carnes = Math.ceil(
@@ -54,8 +56,6 @@ export default function Formulario() {
     const carvao = data.homens + data.mulheres + data.criancas;
     const refrigerantes = Math.ceil(carvao / 5);
     const cerveja = (data.homens + data.mulheres) * 3;
-
-    // console.log(data.id); esse aqui não existe
 
     enviarDados({
       ...data,

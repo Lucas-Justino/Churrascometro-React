@@ -4,6 +4,7 @@ import database from "../../../database/db.json";
 // import { apiDELETE, apiPUT } from "../../services/axios.services";
 import { apiDELETE } from "../../services/axios.services";
 import { Link } from "react-router-dom";
+import updateDate from "../../hooks/updateDate/updateData";
 
 const Home = () => {
   return (
@@ -26,7 +27,7 @@ const Home = () => {
           <tbody>
             {database.churrasco.map((data: IData, index: number) => (
               <tr key={index}>
-                <td>{data.data}</td>
+                <td>{updateDate(data)}</td>
                 <td>{data.totalPessoas}</td>
                 <td>{data.carnes}</td>
                 <td>{data.paoDeAlho}</td>
