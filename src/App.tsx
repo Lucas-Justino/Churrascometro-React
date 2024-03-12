@@ -7,12 +7,9 @@ import {
 import Formulario from "./pages/Formulario/formulario";
 import Home from "./pages/Home/home";
 // import Navbar from "./components/Navbar/navbar";
-import GetApi from "./RESTApi/GetApi";
-import PostApi from "./RESTApi/PostApi";
-import DeleteApi from "./RESTApi/DeleteApi";
-import PutApi from "./RESTApi/PutApi";
 import Start from "./pages/Start/start";
 import EditarFormulario from "./pages/EditarFormulario/editarFormulario";
+import Testando from "./hora";
 
 function App() {
   return (
@@ -22,10 +19,7 @@ function App() {
         <Route path="/formulario" element={<Formulario />} />
         <Route path="/home" element={<Home />} />
         <Route path="/" element={<Start />} />
-        <Route path="/getapi" element={<GetApi />} />
-        <Route path="/postapi" element={<PostApi />} />
-        <Route path="/deleteapi" element={<DeleteApi />} />
-        <Route path="/putapi" element={<PutApi />} />
+        <Route path="testando" element={<Testando/>} />
         <Route
           path="/editar/:id"
           Component={EditarFormulario}

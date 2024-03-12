@@ -6,6 +6,8 @@ import Navbar from "../../components/Navbar/navbar";
 import { apiPOST } from "../../services/axios.services";
 import './formulario.css'
 import Imagem from '../../assets/cozinheiro1.png'
+import { v4 as uuidv4 } from 'uuid';
+import Hora from "../../hora";
 
 interface Inputs {
   data: Date;
@@ -54,6 +56,7 @@ export default function Formulario() {
   const onSubmit = (data: Inputs) => {
     console.log(errors);
     console.log(data);
+    const date = data.data.toLocaleDateString();
     const totalPessoas = data.criancas + data.mulheres + data.homens;
     const carnes = Math.ceil(
       data.criancas * 0.4 + data.mulheres * 0.32 + data.homens * 0.2
@@ -63,14 +66,15 @@ export default function Formulario() {
     const refrigerantes = Math.ceil(carvao / 5);
     const cerveja = (data.homens + data.mulheres) * 3;
     apiPOST("churrasco", {
-      id: "1",
+      ...data,
+      id: uuidv4(),
       totalPessoas,
       carnes,
       paoDeAlho,
       carvao,
       refrigerantes,
       cerveja,
-      ...data,
+      data: date,
     });
   };
 
@@ -106,13 +110,13 @@ export default function Formulario() {
           </div>
           <div className="button-group">
             <button type="submit" className="botao-enviar">Enviar</button>
-            <button type="button" onClick={() => console.log(errors)}>Mostrar Erros</button>
           </div>
         </form>
         </div>
         
       </div>
       </div>
+      <Hora/>
 
     </div>
   );

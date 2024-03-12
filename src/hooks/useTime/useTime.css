@@ -1,0 +1,20 @@
+import { useState, useEffect } from 'react';
+
+const useCurrentTime = () => {
+    const [currentTime, setCurrentTime] = useState<string>("");
+
+    useEffect(() => {
+        const intervalId = setInterval(() => {
+            const now = new Date();
+            const formattedTime = now.toLocaleTimeString();
+            setCurrentTime(formattedTime);
+        }, 1000); // Atualiza a hora a cada segundo
+
+        // Limpar o intervalo quando o componente for desmontado
+        return () => clearInterval(intervalId);
+    }, []); // Executar o efeito apenas uma vez
+
+    return currentTime;
+};
+
+export default useCurrentTime;

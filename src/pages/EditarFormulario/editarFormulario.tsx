@@ -8,7 +8,7 @@ import { useParams } from "react-router-dom";
 
 interface Inputs {
   id: string;
-  data: string;
+  data: Date;
   homens: number;
   mulheres: number;
   criancas: number;
@@ -43,6 +43,7 @@ export default function Formulario() {
   });
 
   const onSubmit: SubmitHandler<Inputs> = (data: Inputs) => {
+    const date = data.data.toLocaleDateString();
     const totalPessoas = data.criancas + data.mulheres + data.homens;
     const carnes = Math.ceil(
       data.criancas * 0.4 + data.mulheres * 0.32 + data.homens * 0.2
@@ -57,17 +58,19 @@ export default function Formulario() {
     if (id) {
       // tem que pegar aqui pra editar
       apiPUT(`churrasco/${id}`, {
+        ...data,
+        data: date,
         totalPessoas,
         carnes,
         paoDeAlho,
         carvao,
         refrigerantes,
         cerveja,
-        ...data,
       });
     } else {
       apiPOST("churrasco", {
-        data,
+        ...data,
+        data: date,
         totalPessoas,
         carnes,
         paoDeAlho,
@@ -114,9 +117,6 @@ export default function Formulario() {
         />
 
         <button type="submit">Enviar</button>
-        <button type="button" onClick={() => console.log(errors)}>
-          Mostrar Erros
-        </button>
       </form>
     </div>
   );
