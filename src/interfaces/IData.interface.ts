@@ -1,6 +1,9 @@
 interface IData {
+  data: Date;
+  homens: number;
+  mulheres: number;
+  criancas: number;
   id: string;
-  data: string;
   totalPessoas: number;
   carnes: number;
   paoDeAlho: number;
@@ -8,3 +11,5 @@ interface IData {
   refrigerantes: number;
   cerveja: number;
 }
+
+export default IData;

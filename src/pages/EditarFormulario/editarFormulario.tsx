@@ -3,8 +3,8 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import * as yup from "yup";
 import { Input } from "../../components/Input/input";
 import Navbar from "../../components/Navbar/navbar";
-import { apiPOST, apiPUT } from "../../services/axios.services";
 import { useParams } from "react-router-dom";
+import { useStore } from "../../zustand/useEditForm/useEditForm.zustand";
 
 interface Inputs {
   id: string;
@@ -42,8 +42,10 @@ export default function Formulario() {
     mode: "onChange",
   });
 
+  const enviarDados = useStore(state => state.enviarDados); 
+
   const onSubmit: SubmitHandler<Inputs> = (data: Inputs) => {
-    const date = data.data.toLocaleDateString();
+    const date = data.data;
     const totalPessoas = data.criancas + data.mulheres + data.homens;
     const carnes = Math.ceil(
       data.criancas * 0.4 + data.mulheres * 0.32 + data.homens * 0.2
@@ -55,30 +57,17 @@ export default function Formulario() {
 
     // console.log(data.id); esse aqui não existe
 
-    if (id) {
-      // tem que pegar aqui pra editar
-      apiPUT(`churrasco/${id}`, {
-        ...data,
-        data: date,
-        totalPessoas,
-        carnes,
-        paoDeAlho,
-        carvao,
-        refrigerantes,
-        cerveja,
-      });
-    } else {
-      apiPOST("churrasco", {
-        ...data,
-        data: date,
-        totalPessoas,
-        carnes,
-        paoDeAlho,
-        carvao,
-        refrigerantes,
-        cerveja,
-      });
-    }
+    enviarDados({
+      ...data,
+      id,
+      totalPessoas,
+      carnes,
+      paoDeAlho,
+      carvao,
+      refrigerantes,
+      cerveja,
+      data: date,
+    });
 
     reset();
   };

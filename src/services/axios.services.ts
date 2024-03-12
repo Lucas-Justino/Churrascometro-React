@@ -1,4 +1,5 @@
 import axios, { AxiosResponse } from "axios";
+import IData from "../interfaces/IData.interface";
 
 const API_URL = "http://localhost:3000/";
 

@@ -90,6 +90,84 @@
       "refrigerantes": 42,
       "cerveja": 420,
       "id": "fd4c23a7-4837-4096-9666-b239fd77aa73"
+    },
+    {
+      "criancas": 1,
+      "mulheres": 1,
+      "data": "12/03/2024",
+      "homens": 1,
+      "totalPessoas": 3,
+      "carnes": 1,
+      "paoDeAlho": 5,
+      "carvao": 3,
+      "refrigerantes": 1,
+      "cerveja": 6,
+      "id": "3a024f93-0033-449e-9b7c-befc3c8f2b57"
+    },
+    {
+      "id": "d4d468c6-b36a-4d71-8ad7-de0128c75605",
+      "criancas": 3,
+      "mulheres": 2,
+      "data": "13/03/2024",
+      "homens": 1,
+      "totalPessoas": 6,
+      "carnes": 3,
+      "paoDeAlho": 9,
+      "carvao": 6,
+      "refrigerantes": 2,
+      "cerveja": 9
+    },
+    {
+      "criancas": 500,
+      "mulheres": 500,
+      "data": "2024-03-21T03:00:00.000Z",
+      "homens": 500,
+      "id": "14bf4298-a2cc-4479-ab92-fe7862176de8",
+      "totalPessoas": 1500,
+      "carnes": 460,
+      "paoDeAlho": 2500,
+      "carvao": 1500,
+      "refrigerantes": 300,
+      "cerveja": 3000
+    },
+    {
+      "criancas": 50,
+      "mulheres": 50,
+      "data": "2024-03-21T03:00:00.000Z",
+      "homens": 50,
+      "id": "029b7092-e632-462b-9060-ee7b933dd918",
+      "totalPessoas": 150,
+      "carnes": 46,
+      "paoDeAlho": 250,
+      "carvao": 150,
+      "refrigerantes": 30,
+      "cerveja": 300
+    },
+    {
+      "criancas": 20,
+      "mulheres": 20,
+      "data": "2024-04-04T03:00:00.000Z",
+      "homens": 20,
+      "id": "b18a432b-4f26-40e2-ae9e-0e18ed4f867c",
+      "totalPessoas": 60,
+      "carnes": 19,
+      "paoDeAlho": 100,
+      "carvao": 60,
+      "refrigerantes": 12,
+      "cerveja": 120
+    },
+    {
+      "criancas": 100,
+      "mulheres": 100,
+      "data": "2024-03-28T03:00:00.000Z",
+      "homens": 100,
+      "id": "33f7b92f-fd79-4e6c-87c5-2c3aadc8ed17",
+      "totalPessoas": 300,
+      "carnes": 92,
+      "paoDeAlho": 500,
+      "carvao": 300,
+      "refrigerantes": 60,
+      "cerveja": 600
     }
   ]
 }
