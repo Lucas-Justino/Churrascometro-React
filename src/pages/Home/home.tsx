@@ -5,12 +5,17 @@ import database from "../../../database/db.json";
 import { apiDELETE } from "../../services/axios.services";
 import { Link } from "react-router-dom";
 import updateDate from "../../hooks/updateDate/updateData";
+import './home.css'
+
 
 const Home = () => {
   return (
-    <div>
+    <div className="home-table">
       <Navbar />
-      <h1>Lista de Churrascos</h1>
+      <div className="text-home">
+        <h1>Lista do Churrasco</h1>
+      </div>
+      
       {database.churrasco.length > 0 ? (
         <table>
           <thead>
@@ -22,6 +27,8 @@ const Home = () => {
               <th>Carvão</th>
               <th>Refrigerantes</th>
               <th>Cerveja</th>
+              <th>Ações</th>
+
             </tr>
           </thead>
           <tbody>
@@ -35,21 +42,9 @@ const Home = () => {
                 <td>{data.refrigerantes}</td>
                 <td>{data.cerveja}</td>
                 <td>
-                  {/* <Botao
-                    tipo="button"
-                    nome="Editar"
-                    onClick={() =>
-                      apiPUT(`churrasco/${data.id.toString()}`, data)
-                    }
-                  /> */}
-                  <Link to={`/editar/${data.id}`}>Editar</Link>
-                </td>
-                <td>
-                  <Botao
-                    tipo="button"
-                    nome="Apagar"
-                    onClick={() => apiDELETE("churrasco/" + data.id.toString())}
-                  />
+                  <Botao tipo="button" nome="Editar" onClick={() => window.location.href = `/editar/${data.id}`}></Botao>
+                  <Botao tipo="button" nome="Apagar"
+                    onClick={() => apiDELETE("churrasco/" + data.id.toString())}/>
                 </td>
               </tr>
             ))}

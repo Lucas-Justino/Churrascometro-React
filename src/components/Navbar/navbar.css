@@ -6,6 +6,8 @@
     padding-left: 70px;
     padding-right: 70px;
     color: white;
+    position: relative;
+    z-index: 3;
 }
 
 .nav-logo img {
