@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import './start.css'
 import Navbar from '../../components/Navbar/navbar';
 import arrow_btn from './../../assets/arrow_btn.png'
+import Hora from "../../components/Hora/hora";
 
 function Start() {
     return (
@@ -17,6 +18,7 @@ function Start() {
             <Link to={"/formulario"}><img src={arrow_btn} alt="" /></Link>
 
             </div>
+            <Hora/>
          </div>
 
     );

@@ -6,6 +6,7 @@ import { apiDELETE } from "../../services/axios.services";
 import { Link } from "react-router-dom";
 import updateDate from "../../hooks/updateDate/updateData";
 import './home.css'
+import Hora from "../../components/Hora/hora";
 
 
 const Home = () => {
@@ -53,6 +54,7 @@ const Home = () => {
       ) : (
         <p>Nenhum churrasco cadastrado</p>
       )}
+    <Hora/>
     </div>
   );
 };
