@@ -4,7 +4,7 @@ import * as yup from "yup";
 import { Input } from "../../components/Input/input";
 import Navbar from "../../components/Navbar/navbar";
 import { useParams } from "react-router-dom";
-import { useStore } from "../../zustand/useEditForm/useEditForm.zustand";
+import { useStore } from "../../zustand/useForm/useForm.zustand";
 import desUpdateData from "../../hooks/desUpdateDate/desUpdateDate";
 import './editarFormulario.css'
 import Imagem from "../../assets/cozinheiro1.png";
@@ -12,7 +12,6 @@ import Hora from "../../components/Hora/hora";
 
 
 interface Inputs {
-  id: string;
   data: Date;
   homens: number;
   mulheres: number;
@@ -47,9 +46,10 @@ export default function Formulario() {
     mode: "onChange",
   });
 
-  const enviarDados = useStore((state) => state.enviarDados);
+  const {enviarDados}  = useStore();
 
-  const onSubmit: SubmitHandler<Inputs> = (data: Inputs) => {
+  const onSubmit: SubmitHandler<Inputs> = (data) => {
+    if(!id) return;
     desUpdateData(data);
     const date = data.data;
     const totalPessoas = data.criancas + data.mulheres + data.homens;

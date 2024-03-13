@@ -41,9 +41,9 @@ export default function Formulario() {
     mode: "onChange",
   });
 
-  const enviarDados = useStore((state) => state.enviarDados); // Função do store para enviar os dados
+  const {enviarDados} = useStore(); 
 
-  const onSubmit = (data: Inputs) => {
+  const onSubmit = async (data: Inputs) => {
     const date = data.data;
     const totalPessoas = data.criancas + data.mulheres + data.homens;
     const carnes = Math.ceil(
@@ -54,7 +54,7 @@ export default function Formulario() {
     const refrigerantes = Math.ceil(carvao / 5);
     const cerveja = (data.homens + data.mulheres) * 3;
 
-    enviarDados({
+    await enviarDados({
       ...data,
       id: uuidv4(),
       totalPessoas,
@@ -66,6 +66,7 @@ export default function Formulario() {
       data: date,
     });
   };
+  //Utilizar o Navigate
 
   return (
     <div className="container">

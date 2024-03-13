@@ -25,6 +25,19 @@
       "carvao": 66,
       "refrigerantes": 14,
       "cerveja": 132
+    },
+    {
+      "id": "5e41a5cb-3798-4ba9-ae1b-cca3feff2c82",
+      "criancas": 15,
+      "mulheres": 10,
+      "data": "2024-03-15T03:00:00.000Z",
+      "homens": 5,
+      "totalPessoas": 30,
+      "carnes": 11,
+      "paoDeAlho": 45,
+      "carvao": 30,
+      "refrigerantes": 6,
+      "cerveja": 45
     }
   ]
 }

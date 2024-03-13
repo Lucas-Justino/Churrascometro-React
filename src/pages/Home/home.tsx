@@ -1,9 +1,7 @@
 import Botao from "../../components/Botao/botao";
 import Navbar from "../../components/Navbar/navbar";
 import database from "../../../database/db.json";
-// import { apiDELETE, apiPUT } from "../../services/axios.services";
 import { apiDELETE } from "../../services/axios.services";
-import { Link } from "react-router-dom";
 import updateDate from "../../hooks/updateDate/updateData";
 import './home.css'
 import Hora from "../../components/Hora/hora";
@@ -33,9 +31,9 @@ const Home = () => {
             </tr>
           </thead>
           <tbody>
-            {database.churrasco.map((data: IData, index: number) => (
+            {database.churrasco.map((data, index) => (
               <tr key={index}>
-                <td>{updateDate(data)}</td>
+                <td>{updateDate(data.data)}</td>
                 <td>{data.totalPessoas}</td>
                 <td>{data.carnes}</td>
                 <td>{data.paoDeAlho}</td>
