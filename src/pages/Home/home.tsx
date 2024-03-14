@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import './start.css'
+import './home.css'
 import Navbar from '../../components/Navbar/navbar';
 import arrow_btn from './../../assets/arrow_btn.png'
 import Hora from "../../components/Hora/hora";
