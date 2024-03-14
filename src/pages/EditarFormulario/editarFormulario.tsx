@@ -8,7 +8,6 @@ import { useStore } from "../../zustand/useForm/useForm.zustand";
 import desUpdateData from "../../hooks/desUpdateDate/desUpdateDate";
 import './editarFormulario.css'
 import Imagem from "../../assets/cozinheiro1.png";
-import Hora from "../../components/Hora/hora";
 
 
 interface Inputs {
@@ -134,7 +133,6 @@ export default function Formulario() {
           </div>
         </div>
       </div>
-      <Hora/>
     </div>
   );
 }

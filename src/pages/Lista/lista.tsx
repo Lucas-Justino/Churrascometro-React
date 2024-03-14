@@ -4,8 +4,6 @@ import database from "../../../database/db.json";
 import { apiDELETE } from "../../services/axios.services";
 import updateDate from "../../hooks/updateDate/updateData";
 import './lista.css'
-import Hora from "../../components/Hora/hora";
-
 
 const Lista = () => {
   return (
@@ -52,7 +50,6 @@ const Lista = () => {
       ) : (
         <p>Nenhum churrasco cadastrado</p>
       )}
-    <Hora/>
     </div>
   );
 };

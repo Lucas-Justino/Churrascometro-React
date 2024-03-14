@@ -7,7 +7,6 @@ import "./formulario.css";
 import Imagem from "../../assets/cozinheiro1.png";
 import { v4 as uuidv4 } from "uuid";
 import { useStore } from "../../zustand/useForm/useForm.zustand";
-import Hora from "../../components/Hora/hora";
 
 interface Inputs {
   data: Date;
@@ -126,7 +125,6 @@ export default function Formulario() {
           </div>
         </div>
       </div>
-      <Hora/>
     </div>
   );
 }
