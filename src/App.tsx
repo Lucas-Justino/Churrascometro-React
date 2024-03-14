@@ -10,25 +10,28 @@ import Home from "./pages/Home/home";
 import Start from "./pages/Start/start";
 import EditarFormulario from "./pages/EditarFormulario/editarFormulario";
 import Testando from "./hora";
+import { ChurrascoProvider } from "./context/user.context";
 
 function App() {
   return (
-    <Router>
-      <RoutesDom>
-        <Route path="/start" element={<Start />} />
-        <Route path="/formulario" element={<Formulario />} />
-        <Route path="/home" element={<Home />} />
-        <Route path="/" element={<Start />} />
-        <Route path="testando" element={<Testando/>} />
-        <Route
-          path="/editar/:id"
-          Component={EditarFormulario}
-          element={<EditarFormulario />}
-        />
-        {/* <Route path="/editar" element={<Formulario />} /> */}
-        {/* <Route path="/navegacao" element={<Navbar/>} /> */}
-      </RoutesDom>
-    </Router>
+    <ChurrascoProvider>
+      <Router>
+        <RoutesDom>
+          <Route path="/start" element={<Start />} />
+          <Route path="/formulario" element={<Formulario />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/" element={<Start />} />
+          <Route path="testando" element={<Testando />} />
+          <Route
+            path="/editar/:id"
+            Component={EditarFormulario}
+            element={<EditarFormulario />}
+          />
+          {/* <Route path="/editar" element={<Formulario />} /> */}
+          {/* <Route path="/navegacao" element={<Navbar/>} /> */}
+        </RoutesDom>
+      </Router>
+    </ChurrascoProvider>
   );
 }
 
