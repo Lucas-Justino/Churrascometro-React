@@ -38,7 +38,6 @@ export default function Formulario() {
   const {
     register,
     handleSubmit,
-    reset,
     formState: { errors },
   } = useForm({
     resolver: yupResolver(schema),
