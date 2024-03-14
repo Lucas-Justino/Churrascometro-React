@@ -5,20 +5,19 @@ import {
   Route,
 } from "react-router-dom";
 import Formulario from "./pages/Formulario/formulario";
-import Start from "./pages/Home/home";
 import EditarFormulario from "./pages/EditarFormulario/editarFormulario";
 import { ChurrascoProvider } from "./context/user.context";
 import Lista from "./pages/Lista/lista";
+import Home from "./pages/Home/home";
 
 function App() {
   return (
     <ChurrascoProvider>
       <Router>
         <RoutesDom>
-          <Route path="/start" element={<Start />} />
           <Route path="/formulario" element={<Formulario />} />
           <Route path="/lista" element={<Lista />} />
-          <Route path="/" element={<Start />} />
+          <Route path="/" element={<Home />} />
           <Route
             path="/editar/:id"
             Component={EditarFormulario}

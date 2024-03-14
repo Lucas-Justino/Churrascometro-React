@@ -1,11 +1,37 @@
+import { useState, useEffect } from "react";
 import Botao from "../../components/Botao/botao";
 import Navbar from "../../components/Navbar/navbar";
-import database from "../../../database/db.json";
-import { apiDELETE } from "../../services/axios.services";
+import { apiDELETE, apiGET } from "../../services/axios.services";
 import updateDate from "../../hooks/updateDate/updateData";
 import './lista.css'
 
+interface ChurrascoData {
+  id: number;
+  data: string;
+  totalPessoas: number;
+  carnes: string;
+  paoDeAlho: string;
+  carvao: string;
+  refrigerantes: string;
+  cerveja: string;
+}
+
 const Lista = () => {
+  const [churrascoData, setChurrascoData] = useState<ChurrascoData[]>([]);
+
+  useEffect(() => {
+    const fetchChurrascoData = async () => {
+      try {
+        const response = await apiGET<ChurrascoData[]>("churrasco");
+        setChurrascoData(response.data);
+      } catch (error) {
+        console.error("Erro ao buscar dados do churrasco:", error);
+      }
+    };
+
+    fetchChurrascoData();
+  }, []);
+
   return (
     <div className="home-table">
       <Navbar />
@@ -13,7 +39,7 @@ const Lista = () => {
         <h1>Lista do Churrasco</h1>
       </div>
       
-      {database.churrasco.length > 0 ? (
+      {churrascoData.length > 0 ? (
         <table>
           <thead>
             <tr>
@@ -25,11 +51,10 @@ const Lista = () => {
               <th>Refrigerantes</th>
               <th>Cerveja</th>
               <th>Ações</th>
-
             </tr>
           </thead>
           <tbody>
-            {database.churrasco.map((data, index) => (
+            {churrascoData.map((data, index) => (
               <tr key={index}>
                 <td>{updateDate(data.data)}</td>
                 <td>{data.totalPessoas}</td>
@@ -40,8 +65,7 @@ const Lista = () => {
                 <td>{data.cerveja}</td>
                 <td>
                   <Botao tipo="button" nome="Editar" onClick={() => window.location.href = `/editar/${data.id}`}></Botao>
-                  <Botao tipo="button" nome="Apagar"
-                    onClick={() => apiDELETE("churrasco/" + data.id.toString())}/>
+                  <Botao tipo="button" nome="Apagar" onClick={() => handleDelete(data.id)} />
                 </td>
               </tr>
             ))}
@@ -52,6 +76,15 @@ const Lista = () => {
       )}
     </div>
   );
+
+  async function handleDelete(id: number) {
+    try {
+      apiDELETE("churrasco/" + id.toString())
+      setChurrascoData(churrascoData.filter(item => item.id !== id));
+    } catch (error) {
+      console.error("Erro ao deletar churrasco:", error);
+    }
+  }
 };
 
 export default Lista;

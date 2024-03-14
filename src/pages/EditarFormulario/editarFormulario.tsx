@@ -46,7 +46,6 @@ export default function Formulario() {
   });
 
   const {atualizarDados}  = useStore();
-
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     if(!id) return;
     desUpdateData(data);
@@ -72,7 +71,6 @@ export default function Formulario() {
       data: date,
     });
 
-    reset();
   };
 
   return (

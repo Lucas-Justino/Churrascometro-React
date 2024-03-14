@@ -40,7 +40,7 @@ export default function Formulario() {
     mode: "onChange",
   });
 
-  const {enviarDados} = useStore(); 
+  const { enviarDados } = useStore();
 
   const onSubmit = async (data: Inputs) => {
     const date = data.data;
@@ -65,7 +65,6 @@ export default function Formulario() {
       data: date,
     });
   };
-  //Utilizar o Navigate
 
   return (
     <div className="container">
