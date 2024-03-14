@@ -46,7 +46,7 @@ export default function Formulario() {
     mode: "onChange",
   });
 
-  const {enviarDados}  = useStore();
+  const {atualizarDados}  = useStore();
 
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     if(!id) return;
@@ -61,7 +61,7 @@ export default function Formulario() {
     const refrigerantes = Math.ceil(carvao / 5);
     const cerveja = (data.homens + data.mulheres) * 3;
 
-    enviarDados({
+    atualizarDados({
       ...data,
       id,
       totalPessoas,

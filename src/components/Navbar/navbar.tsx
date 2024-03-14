@@ -11,9 +11,9 @@ const Navbar = () => {
             <img src={logo} alt="Logo" />
         </div>
             <ul className='nav-menu'>
-            <li><Link to={"/start"}>Home</Link></li>
+            <li><Link to={"/"}>Home</Link></li>
             <li><Link to={"/formulario"}>Nova Lista</Link></li>
-            <li className='nav-newlist'><Link to={"/home"}>Sua lista</Link></li>
+            <li className='nav-newlist'><Link to={"/lista"}>Sua lista</Link></li>
         </ul>
     </div>
     )

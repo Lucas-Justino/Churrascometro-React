@@ -1,7 +1,7 @@
 import axios, { AxiosResponse } from "axios";
 import IData from "../interfaces/IData.interface";
 
-const API_URL = "http://localhost:3000/";
+const API_URL = import.meta.env.VITE_BASE_URL;
 
 export const apiGET = async <T>(
   endpoint: string
