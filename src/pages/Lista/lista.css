@@ -7,54 +7,36 @@
 .home-table{
     background: url("../../assets/imagem3.jpg") no-repeat center center fixed;
     background-size: cover; 
-    height: 100vh;
+    height: 100vh; 
     width: 100%;
-    position: relative;
-    overflow: hidden; 
+    /* position: relative; */
 }
 
 .text-home {
-    position: center;
-    top: 50%;
-    transform: translateY(-50%);
+    position: relative; /* Alterada para relative */
+    text-align: center;
+    margin-top: 10vh; /* Posiciona o centro vertical do container no meio da tela */
+    transform: translateY(160%); /* Ajusta a posição vertical */
 }
 
-.text-home h1 {
-    margin-top: 245px;
-    margin-left: 800px;
-    border-radius: 5px;
-    font-size: 40px;
-    color: #fff;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-.table-wrapper {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60%;
-    max-height: 80%; 
-    overflow-y: auto; 
-    border-radius: 12px;
-    box-shadow: 0 2px 12px rgba(32,32,32,.3);
-    background: #fafafa;
-    text-align: center; 
+.text-home h1{
+    margin-bottom: 20px; /* Adiciona espaço entre o título e a tabela */
+    color: #eeeeee;
 }
 
 table {
-    position: absolute;
-    z-index: 2;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    margin: auto;
+    margin-top: 20vh;
     width: 60%;
+    transform: translateY(-10%);
     border-collapse: collapse;
     border-spacing: 0;
     border-radius: 12px 12px 0 0;
-    overflow: hidden;
+    overflow-y: auto;
+    max-height: 70vh;
     box-shadow: 0 2px 12px rgba(32,32,32,.3);
     background: #fafafa;
-    text-align: center; 
+    text-align: center;
 }
 
 th, td{
@@ -64,6 +46,17 @@ th {
     background: #A86C62;
     color: #fafafa;
     text-transform: uppercase;
+}
+
+.no-churrasco-message {
+    margin-top: 100px;
+    padding: 0px 2px;
+    width: 350px; 
+    margin-left: auto; 
+    margin-right: auto;
+    background-color: #ffffff;
+    border-radius: 12px; 
+    text-align: center;
 }
 
 tr:nth-child(odd){
@@ -77,6 +70,7 @@ button{
     border-radius: 6px;
     background-color: #A86C62;
     transition: all 0.2s ease;
+    cursor: pointer;
 }
 
 button:active{

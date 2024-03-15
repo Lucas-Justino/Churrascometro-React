@@ -36,9 +36,8 @@ const Lista = () => {
     <div className="home-table">
       <Navbar />
       <div className="text-home">
-        <h1>Lista do Churrasco</h1>
+      <h1>Lista do Churrasco</h1>
       </div>
-      <div className="table-wrapper">
       {churrascoData.length > 0 ? (
         <table>
           <thead>
@@ -72,10 +71,12 @@ const Lista = () => {
           </tbody>
         </table>
       ) : (
-        <p>Nenhum churrasco cadastrado</p>
+        <div className="no-churrasco-message">
+          <p>Nenhum churrasco cadastrado</p>
+        </div>
       )}
        </div>
-    </div>
+
   );
 
   async function handleDelete(id: number) {
