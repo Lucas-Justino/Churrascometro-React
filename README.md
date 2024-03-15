@@ -1,6 +1,6 @@
 # Churrascometro
 
-Bem-vindo ao Churrascometro! Este é um projeto simples e prático desenvolvido em React com TypeScript e empacotado com Vite para ajudar a calcular a quantidade de carne, pão de alho, carvão, refrigerantes e cerveja necessários para o seu churrasco, de acordo com o número de homens, mulheres e crianças que estarão presentes.
+Bem-vindo ao Churrascometro! Este é um projeto simples e prático desenvolvido em React com TypeScript e empacotado com Vite para ajudar a calcular a quantidade de carne, pão de alho, carvão, refrigerantes e cerveja necessários para o seu churrasco, de acordo com o número de homens, mulheres e crianças que estarão presentes. Utilizamos o JSON-Server como banco de dados, empregando o serviço web no Render. Além disso, optamos pelo Vercel para hospedar o site.
 
 ## Como usar:
 
@@ -41,6 +41,7 @@ Contribuições são bem-vindas! Se você tiver sugestões de melhorias, novos r
 - [Juan Figueiredo](https://github.com/juan-figueiredo)
 - [Karina Nunes](https://www.linkedin.com/in/karinanuunes/)
 - [Laiane de Jesus](https://github.com/LaianeDeJesus)
+- [Lucas Justino](https://github.com/Lucas-Justino)
 - [Pabricio Lima](https://github.com/Pabriciolima)
 
 ## Aviso Legal:
