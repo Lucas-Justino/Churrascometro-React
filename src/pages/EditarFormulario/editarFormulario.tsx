@@ -3,7 +3,7 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import * as yup from "yup";
 import { Input } from "../../components/Input/input";
 import Navbar from "../../components/Navbar/navbar";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useStore } from "../../zustand/useForm/useForm.zustand";
 import desUpdateData from "../../hooks/desUpdateDate/desUpdateDate";
 import './editarFormulario.css'
@@ -34,6 +34,7 @@ const schema = yup
 
 export default function Formulario() {
   const { id } = useParams();
+  
 
   const {
     register,
@@ -45,6 +46,7 @@ export default function Formulario() {
   });
 
   const {atualizarDados}  = useStore();
+  const navigate = useNavigate();
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     if(!id) return;
     desUpdateData(data);
@@ -69,7 +71,7 @@ export default function Formulario() {
       cerveja,
       data: date,
     });
-
+    navigate("/lista");
   };
 
   return (
