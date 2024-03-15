@@ -7,6 +7,7 @@ import "./formulario.css";
 import Imagem from "../../assets/cozinheiro1.png";
 import { v4 as uuidv4 } from "uuid";
 import { useStore } from "../../zustand/useForm/useForm.zustand";
+import { useNavigate } from "react-router-dom";
 
 interface Inputs {
   data: Date;
@@ -41,6 +42,7 @@ export default function Formulario() {
   });
 
   const { enviarDados } = useStore();
+  const navigate = useNavigate();
 
   const onSubmit = async (data: Inputs) => {
     const date = data.data;
@@ -64,6 +66,7 @@ export default function Formulario() {
       cerveja,
       data: date,
     });
+    navigate("/lista")
   };
 
   return (
