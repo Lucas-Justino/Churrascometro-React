@@ -5,11 +5,12 @@
 }
 
 .home-table{
-    background: url("../../assets/imagem3.gif") no-repeat center center fixed;
+    background: url("../../assets/imagem3.jpg") no-repeat center center fixed;
     background-size: cover; 
-    height: 100vh; 
+    height: 100vh;
     width: 100%;
     position: relative;
+    overflow: hidden; 
 }
 
 .text-home {
@@ -27,6 +28,18 @@
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
+.table-wrapper {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    max-height: 80%; 
+    overflow-y: auto; 
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(32,32,32,.3);
+    background: #fafafa;
+    text-align: center; 
+}
 
 table {
     position: absolute;

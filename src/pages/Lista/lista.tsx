@@ -38,7 +38,7 @@ const Lista = () => {
       <div className="text-home">
         <h1>Lista do Churrasco</h1>
       </div>
-      
+      <div className="table-wrapper">
       {churrascoData.length > 0 ? (
         <table>
           <thead>
@@ -74,6 +74,7 @@ const Lista = () => {
       ) : (
         <p>Nenhum churrasco cadastrado</p>
       )}
+       </div>
     </div>
   );
 
