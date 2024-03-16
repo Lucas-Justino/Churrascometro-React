@@ -44,6 +44,10 @@ Contribuições são bem-vindas! Se você tiver sugestões de melhorias, novos r
 - [Lucas Justino](https://github.com/Lucas-Justino)
 - [Pabricio Lima](https://github.com/Pabriciolima)
 
+## Link do site no Vercel:
+
+https://churrascometro-react-sigma.vercel.app/
+
 ## Aviso Legal:
 
 Divirta-se e aproveite o seu churrasco! 🍖🔥🍺
